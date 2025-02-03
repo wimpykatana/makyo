@@ -1,5 +1,4 @@
-import React from 'react';
-import { Story, Meta } from '@storybook/react';
+import { StoryFn, Meta } from '@storybook/react';
 import SearchableDropdown, { SearchableDropdownProps, DropdownOption } from './Dropdown';
 
 export default {
@@ -7,7 +6,7 @@ export default {
   component: SearchableDropdown,
 } as Meta;
 
-const Template: Story<SearchableDropdownProps> = (args) => <SearchableDropdown {...args} />;
+const Template: StoryFn<SearchableDropdownProps> = (args) => <SearchableDropdown {...args} />;
 
 const options: DropdownOption[] = [
   { label: 'Option 1', value: '1' },
