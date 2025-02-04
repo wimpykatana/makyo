@@ -15,7 +15,7 @@ function App() {
 
   return (
     <>
-      <Dropdown options={options} onChange={(selected) => console.log(selected)} />
+      <Dropdown options={options} onChange={(selected) => console.log(selected)} multiple={true} />
     </>
   )
 }

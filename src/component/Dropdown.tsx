@@ -74,16 +74,35 @@ const SearchableDropdown: React.FC<SearchableDropdownProps> = ({
     );
   }
 
+  const removeItem = (id: number) => {
+    setSelectedOptions((prev) => prev.filter((_, i) => i !== id));
+  }
+
+  const renderSelectedOptions = (item: string, id) => {
+    return(
+        <span className='bg-blue-300 rounded-full px-2 py-1.5 mr-1 inline-block'>
+            {item}
+            <span className={`text-xs text-gray-500 ml-1 cursor-pointer ${id}`} onClick={() => removeItem(id)}>x</span>
+        </span>
+    )
+  }
+  
+
   useEffect(() => {
     onChange(selectedOptions);
   }, [selectedOptions, onChange]);
 
   return (
-    <div ref={dropdownRef} className='absolute z-1000 bg-white border border-gray-300 rounded shadow-md text-black min-w-2xs'>
-      <div onClick={toggleDropdown}>
-        {selectedOptions.length > 0
+    <div ref={dropdownRef} className='z-1000 bg-white border border-gray-300 shadow-md text-black w-[calc(100%-15px)] px-3 py-1.5 mx-2 min-w-[200px]'>
+      <div onClick={toggleDropdown} className='cursor-pointer'>
+        {/*{selectedOptions.length > 0
           ? selectedOptions.map((option) => option.label).join(', ')
+          : placeholder}*/}
+
+        {selectedOptions.length > 0
+          ? selectedOptions.map((option, x) => renderSelectedOptions(option.label, x))
           : placeholder}
+
       </div>
       {isOpen && (
         <div>
