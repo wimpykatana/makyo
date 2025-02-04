@@ -78,7 +78,7 @@ const SearchableDropdown: React.FC<SearchableDropdownProps> = ({
     setSelectedOptions((prev) => prev.filter((_, i) => i !== id));
   }
 
-  const renderSelectedOptions = (item: string, id) => {
+  const renderSelectedOptions = (item: string, id: number) => {
     return(
         <span className='bg-blue-300 rounded-full px-2 py-1.5 mr-1 inline-block'>
             {item}
