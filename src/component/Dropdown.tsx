@@ -82,7 +82,13 @@ const SearchableDropdown: React.FC<SearchableDropdownProps> = ({
     return(
         <span className='bg-blue-300 rounded-full px-2 py-1.5 mr-1 inline-block'>
             {item}
-            <span className={`text-xs text-gray-500 ml-1 cursor-pointer ${id}`} onClick={() => removeItem(id)}>x</span>
+            <span 
+              className={`z-10 text-xs text-gray-500 ml-1 cursor-pointer ${id}`} 
+              onClick={(e: React.MouseEvent<HTMLSpanElement>) => 
+                {
+                  e.stopPropagation();
+                  removeItem(id)
+              }}>x</span>
         </span>
     )
   }
@@ -93,11 +99,8 @@ const SearchableDropdown: React.FC<SearchableDropdownProps> = ({
   }, [selectedOptions, onChange]);
 
   return (
-    <div ref={dropdownRef} className='z-1000 bg-white border border-gray-300 shadow-md text-black w-[calc(100%-15px)] px-3 py-1.5 mx-2 min-w-[200px]'>
+    <div ref={dropdownRef} className='bg-white border border-gray-300 shadow-md text-black w-[calc(100%-15px)] px-3 py-1.5 mx-2 min-w-[200px]'>
       <div onClick={toggleDropdown} className='cursor-pointer'>
-        {/*{selectedOptions.length > 0
-          ? selectedOptions.map((option) => option.label).join(', ')
-          : placeholder}*/}
 
         {selectedOptions.length > 0
           ? selectedOptions.map((option, x) => renderSelectedOptions(option.label, x))
