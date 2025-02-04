@@ -10,7 +10,7 @@
     "preview": "vite preview",
     "storybook":  "concurrently \"npm run tailwind:css\" \"storybook dev -p 6006\"",
     "build-storybook": "storybook build",
-    "tailwind:css": "tailwindcss -i ./src/index.css -o ./src/.css"
+    "tailwind:css": "npx @tailwindcss/cli -i ./src/index.css -o ./src/tailwind.css"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.0.3",

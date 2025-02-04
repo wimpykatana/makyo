@@ -530,11 +530,17 @@
   .static {
     position: static;
   }
-  .z-1000 {
-    z-index: 1000;
+  .z-10 {
+    z-index: 10;
   }
-  .contents {
-    display: contents;
+  .mx-2 {
+    margin-inline: calc(var(--spacing) * 2);
+  }
+  .mr-1 {
+    margin-right: calc(var(--spacing) * 1);
+  }
+  .ml-1 {
+    margin-left: calc(var(--spacing) * 1);
   }
   .flex {
     display: flex;
@@ -548,14 +554,20 @@
   .inline-block {
     display: inline-block;
   }
-  .min-w-2xs {
-    min-width: var(--container-2xs);
+  .w-\[calc\(100\%-15px\)\] {
+    width: calc(100% - 15px);
+  }
+  .min-w-\[200px\] {
+    min-width: 200px;
   }
   .transform {
     transform: var(--tw-rotate-x) var(--tw-rotate-y) var(--tw-rotate-z) var(--tw-skew-x) var(--tw-skew-y);
   }
-  .rounded {
-    border-radius: 0.25rem;
+  .cursor-pointer {
+    cursor: pointer;
+  }
+  .rounded-full {
+    border-radius: calc(infinity * 1px);
   }
   .border {
     border-style: var(--tw-border-style);
@@ -570,8 +582,24 @@
   .bg-white {
     background-color: var(--color-white);
   }
+  .px-2 {
+    padding-inline: calc(var(--spacing) * 2);
+  }
+  .px-3 {
+    padding-inline: calc(var(--spacing) * 3);
+  }
+  .py-1\.5 {
+    padding-block: calc(var(--spacing) * 1.5);
+  }
+  .text-xs {
+    font-size: var(--text-xs);
+    line-height: var(--tw-leading, var(--text-xs--line-height));
+  }
   .text-black {
     color: var(--color-black);
+  }
+  .text-gray-500 {
+    color: var(--color-gray-500);
   }
   .shadow-md {
     --tw-shadow: 0 4px 6px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 2px 4px -2px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
@@ -587,7 +615,6 @@
   font-weight: 400;
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -627,7 +654,7 @@ button:hover {
 button:focus, button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
-@media (prefers-color-scheme: light) {
+@media (prefers-color-scheme: dark) {
   :root {
     color: #213547;
     background-color: #ffffff;
