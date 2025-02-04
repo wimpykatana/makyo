@@ -1,3 +1,5 @@
+![](https://wimpymakyo.netlify.app/demo.gif)
+
 # React Dropdown Select
 
 This project is a React application that includes a customizable, searchable dropdown component. It uses Tailwind CSS for styling and Storybook for component development and testing.
